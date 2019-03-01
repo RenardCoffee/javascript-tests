@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to diferenciate from a Variable and a Number!!</p>
+<input id="textbox" type="text" />
+<button onclick="isVariable()">What iam?</button>
+
+<p id="res"></p>
+
+<script>
+function isVariable() {
+  var str = document.getElementById("textbox").value;
+  var patt1 = /^[0-9]+$/;
+  var patt2 = /^[a-zA-Z]+([a-zA-Z]+|[0-9]+)*$/;
+  if (str.match(patt2))  
+  {
+  	var result = "Im a Variable!"
+  }else if (str.match(patt1))
+  {
+  	var result = "Im a Number!"
+  }
+  document.getElementById("res").innerHTML = result;
+}
+</script>
+
+</body>
+</html>
